@@ -1,4 +1,11 @@
 .cards {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 150px 1fr 50px;
+  grid-template-areas: "header header"
+                       "side main"
+                       "footer footer"
+  ;
 }
 
 .cards img {
@@ -28,4 +35,27 @@ img {
 .card {
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.cards .card:nth-child(1) {
+  grid-area: header;
+} 
+
+.cards .card:nth-child(2) {
+  grid-area: main;
+}
+
+.cards .card:nth-child(3) {
+  grid-area: side;
+}
+
+.cards .card:nth-child(4) {
+  grid-area: footer;
+}
+
+nav {
+  grid-area: header;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
 }
